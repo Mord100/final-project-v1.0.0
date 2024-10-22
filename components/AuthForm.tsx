@@ -46,7 +46,7 @@ const AuthForm = ({ type }: { type: string }) => {
     }
 
     return (
-        <section className="auth-form">
+        <section className="auth-form  border p-8">
             <header className="flex flex-col gap-5 md:gap-8">
                 <Link href="/" className="cursor-pointer pb-4 flex items-center gap-1 ">
                     <TbCardsFilled size={30} className="text-gray-900" />
