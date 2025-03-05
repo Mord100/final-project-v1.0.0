@@ -32,6 +32,8 @@ export const signUp = async (userData: SignUpParams) => {
 
     const session = await account.createEmailPasswordSession(email, password);
 
+    // console.log('Setting session cookie:', session.secret);
+
     cookies().set("appwrite-session", session.secret, {
       path: "/",
       httpOnly: true,
