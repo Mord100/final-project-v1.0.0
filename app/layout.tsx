@@ -12,8 +12,8 @@ const ibmPlexSerif = IBM_Plex_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Banking",
-  description: "banking platform.",
+  title: "Open Banking",
+  description: "open banking platform.",
   icons: {
     icon: '/icons/wallet.png'
   }
