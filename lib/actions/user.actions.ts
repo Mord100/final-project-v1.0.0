@@ -11,6 +11,13 @@ export const signIn = async ({ email, password }: signInProps) => {
 
     const response = await account.createEmailPasswordSession(email, password);
 
+    cookies().set("appwrite-session", response.secret, {
+      path: "/",
+      httpOnly: true,
+      sameSite: "strict",
+      secure: true,
+    });
+
     return parseStringify(response);
   } catch (error) {
     console.error('Error', error);
@@ -31,8 +38,6 @@ export const signUp = async (userData: SignUpParams) => {
     );
 
     const session = await account.createEmailPasswordSession(email, password);
-
-    // console.log('Setting session cookie:', session.secret);
 
     cookies().set("appwrite-session", session.secret, {
       path: "/",
